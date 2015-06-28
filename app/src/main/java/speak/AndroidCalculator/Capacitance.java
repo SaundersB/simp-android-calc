@@ -1,9 +1,15 @@
 package speak.AndroidCalculator;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import speak.AndroidCalculator.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +26,8 @@ public class Capacitance extends Activity {
     private EditText ElectricChargeText;
     private EditText CapacitanceText;
     private List<EditText> EditTextFields;
+    final Context context = this;
+
 
     // Layout
     @Override
@@ -27,6 +35,15 @@ public class Capacitance extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capacitance_main);
         initalizeTextFields();
+        TextView capacitance = (TextView) findViewById(R.id.capacitancetxt);
+        capacitance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showcapdef();
+            }
+        });
+
+
     }
 
     private void initalizeTextFields() {
@@ -80,5 +97,43 @@ public class Capacitance extends Activity {
         }
 
     }
+
+
+    public void showcapdef(){
+
+
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+        // set title
+        alertDialogBuilder.setTitle("Your Title");
+
+        // set dialog message
+        alertDialogBuilder
+                .setMessage("Click yes to exit!")
+                .setCancelable(false)
+                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, close
+                        // current activity
+                        Capacitance.this.finish();
+                    }
+                })
+                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        // if this button is clicked, just close
+                        // the dialog box and do nothing
+                        dialog.cancel();
+                    }
+                });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+    }
+
+
 
 }
