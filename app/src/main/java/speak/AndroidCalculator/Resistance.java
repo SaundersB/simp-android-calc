@@ -19,11 +19,11 @@ import java.util.List;
 
 
 
-public class Capacitance extends Activity {
+public class Resistance extends Activity {
 
-    private EditText VoltageText;
-    private EditText ElectricChargeText;
-    private EditText CapacitanceText;
+    private EditText voltagetext;
+    private EditText amperetext;
+    private EditText resistancetext;
     private List<EditText> EditTextFields;
     final Context context = this;
 
@@ -32,28 +32,28 @@ public class Capacitance extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.capacitance_main);
+        setContentView(R.layout.resistance_main);
         initalizeTextFields();
 
-        TextView capacitance = (TextView) findViewById(R.id.resistancetxt);
-        capacitance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showcapdef();
-            }
-        });
-        TextView charge = (TextView) findViewById(R.id.amperetext);
-        charge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showchargedef();
-            }
-        });
         TextView volts = (TextView) findViewById(R.id.voltagetext);
         volts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showvoltdef();
+            }
+        });
+        TextView amps = (TextView) findViewById(R.id.amperetext);
+        amps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showampdef();
+            }
+        });
+        TextView resist = (TextView) findViewById(R.id.resistancetxt);
+        resist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showresistdef();
             }
         });
 
@@ -62,19 +62,19 @@ public class Capacitance extends Activity {
 
     private void initalizeTextFields() {
         EditTextFields = new ArrayList<>();
-        VoltageText = (EditText) findViewById(R.id.voltagefield);
-        EditTextFields.add(VoltageText);
-        ElectricChargeText = (EditText) findViewById(R.id.electricchargefield);
-        EditTextFields.add(ElectricChargeText);
-        CapacitanceText = (EditText) findViewById(R.id.capacitancefield);
-        EditTextFields.add(CapacitanceText);
+        amperetext = (EditText) findViewById(R.id.amperetext);
+        EditTextFields.add(amperetext);
+        resistancetext = (EditText) findViewById(R.id.resistancetxt);
+        EditTextFields.add(resistancetext);
+        voltagetext = (EditText) findViewById(R.id.voltagetext);
+        EditTextFields.add(voltagetext);
     }
 
 
     public void onClickEnter(View view) {
-        String num1 = VoltageText.getText().toString();
-        String num2 = ElectricChargeText.getText().toString();
-        String num3 = CapacitanceText.getText().toString();
+        String num1 = voltagetext.getText().toString();
+        String num2 = resistancetext.getText().toString();
+        String num3 = amperetext.getText().toString();
 
         double volt;
         double charge;
@@ -84,21 +84,21 @@ public class Capacitance extends Activity {
                 volt = Double.parseDouble(num1);
                 charge = Double.parseDouble(num2);
                 capa = (charge / volt);
-                CapacitanceText.setText(String.valueOf(capa));
+                voltagetext.setText(String.valueOf(capa));
         }
 
         else if ((num2 != null && num2.trim().length() > 0) && (num3 != null && num3.trim().length() > 0)) {
                 charge = Double.parseDouble(num2);
                 capa = Double.parseDouble(num3);
                 volt = (charge / capa);
-                VoltageText.setText(String.valueOf(volt));
+                resistancetext.setText(String.valueOf(volt));
             }
 
         else if ((num3 != null && num3.trim().length() > 0) && (num1 != null && num1.trim().length() > 0)) {
                 capa = Double.parseDouble(num3);
                 volt = Double.parseDouble(num1);
                 charge = (capa * volt);
-                ElectricChargeText.setText(String.valueOf(charge));
+                amperetext.setText(String.valueOf(charge));
             }
 
     }
@@ -113,30 +113,19 @@ public class Capacitance extends Activity {
     }
 
     // Three functions to have popup definitions for each of the inputs.
-    public void showcapdef(){
+    public void showresistdef(){
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setMessage("Resistance .");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);
         alertDialog.show();
     }
-
-    public void showchargedef(){
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-        alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Electric charge is the physical property of matter that causes it to experience a force when placed in an electromagnetic field.");
-        alertDialogBuilder.setCancelable(true);
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.setCanceledOnTouchOutside(true);
-        alertDialog.show();
-    }
-
 
     public void showvoltdef(){
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
         alertDialogBuilder.setMessage("Voltage is the electric energy charge difference of electric potential energy transported between two points.");
@@ -147,9 +136,20 @@ public class Capacitance extends Activity {
     }
 
 
+    public void showampdef(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setTitle("Definition");
+        alertDialogBuilder.setMessage("Amperes ");
+        alertDialogBuilder.setCancelable(true);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
+
+
     public void OnClickMoreInfo(View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-        alertDialogBuilder.setTitle("Capacitance");
+        alertDialogBuilder.setTitle("Resistance");
         alertDialogBuilder.setMessage("Capacitance is typified by a parallel plate arrangement and is defined in terms of charge storage.\n" +
                 "Equation: C=Q/V.\n" +
                 "Unit: Coulomb/Volt = Farad.\n");
@@ -175,7 +175,7 @@ public class Capacitance extends Activity {
                     public void onClick(DialogInterface dialog,int id) {
                         // if this button is clicked, close
                         // current activity
-                        Capacitance.this.finish();
+                        Resistance.this.finish();
                     }
                 })
                 .setNegativeButton("No",new DialogInterface.OnClickListener() {

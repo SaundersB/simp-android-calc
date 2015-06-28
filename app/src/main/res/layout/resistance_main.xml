@@ -38,13 +38,13 @@
         android:background="#ffffffff"
         android:layout_above="@+id/voltagetext"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/amperetext"
-        android:layout_marginStart="34dp" />
+        android:layout_toEndOf="@+id/resistancetxt"
+        android:layout_marginStart="53dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/capacitance"
+        android:text="Resistance"
         android:id="@+id/resistancetxt"
         android:textSize="20sp"
         android:textColor="#fffff7ff"
@@ -55,7 +55,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Electric Charge"
+        android:text="Amperes"
         android:id="@+id/amperetext"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
@@ -115,7 +115,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate Capacitance"
+        android:text="Calculate Ohm&apos;s Law"
         android:id="@+id/CalcResistHead"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
