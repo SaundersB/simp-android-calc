@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#ff4f6fff"
+    android:id="@+id/capacitancestring">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/enter"
+        android:layout_marginStart="95dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/clear"
+        android:layout_alignTop="@+id/enter"
+        android:layout_toEndOf="@+id/enter"
+        android:layout_marginStart="58dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/capacitancetext"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/capacitancetext"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/enter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/capacitance"
+        android:id="@+id/capacitancetext"
+        android:layout_marginTop="87dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/enter"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Electric Charge"
+        android:id="@+id/electriccharge"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/capacitancetext"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/electricchargefield"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/electriccharge"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/capacitancetext" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltage"
+        android:id="@+id/voltagetext"
+        android:layout_below="@+id/electricchargefield"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp"
+        android:textSize="20sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/voltagefield"
+        android:background="#ffffffff"
+        android:layout_alignBottom="@+id/voltagetext"
+        android:layout_alignEnd="@+id/electricchargefield"
+        android:layout_alignStart="@+id/electricchargefield" />
+
+</RelativeLayout>
