@@ -41,16 +41,5 @@
         android:textIsSelectable="true"
         android:textStyle="bold" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Unit Conversions"
-        android:id="@+id/unitconversionbutton"
-        android:onClick="Resistance"
-        android:layout_below="@+id/calcresistance"
-        android:layout_alignStart="@+id/calcresistance"
-        android:layout_alignEnd="@+id/calcresistance" />
-
 
 </RelativeLayout>

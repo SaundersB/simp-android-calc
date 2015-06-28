@@ -80,6 +80,7 @@ public class Resistance extends Activity {
         double amp;
         double resis;
 
+        // If volt and resistance is input. Calculate the amperes.
         if ((num1 != null && num1.trim().length() > 0) && (num2 != null && num2.trim().length() > 0)) {
                 volt = Double.parseDouble(num1);
                 resis = Double.parseDouble(num2);
@@ -91,14 +92,14 @@ public class Resistance extends Activity {
                 resis = Double.parseDouble(num2);
                 amp = Double.parseDouble(num3);
                 volt = (resis * amp);
-                resistancetext.setText(String.valueOf(volt));
+                voltagetext.setText(String.valueOf(volt));
             }
 
         else if ((num3 != null && num3.trim().length() > 0) && (num1 != null && num1.trim().length() > 0)) {
                 amp = Double.parseDouble(num3);
                 volt = Double.parseDouble(num1);
                 resis = (volt / amp);
-                amperetext.setText(String.valueOf(resis));
+                resistancetext.setText(String.valueOf(resis));
             }
 
     }
@@ -117,7 +118,7 @@ public class Resistance extends Activity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Resistance .");
+        alertDialogBuilder.setMessage("Resistance is an electrical quantity that measures how the device or material reduces the electric current flow through it.");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);
@@ -139,7 +140,7 @@ public class Resistance extends Activity {
     public void showampdef(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Amperes ");
+        alertDialogBuilder.setMessage("Electric current is the rate of charge flow past a given point in an electric circuit, measured in Coulombs/second which is named Amperes.");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);
@@ -150,9 +151,9 @@ public class Resistance extends Activity {
     public void OnClickMoreInfo(View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Resistance");
-        alertDialogBuilder.setMessage("Capacitance is typified by a parallel plate arrangement and is defined in terms of charge storage.\n" +
-                "Equation: C=Q/V.\n" +
-                "Unit: Coulomb/Volt = Farad.\n");
+        alertDialogBuilder.setMessage("The electrical resistance of a circuit component or device is defined as the ratio of the voltage applied to the electric current which flows through it.\n" +
+                "Equation: R=V/I.\n" +
+                "Unit: Volt/Ampere = Ohm's.\n");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);

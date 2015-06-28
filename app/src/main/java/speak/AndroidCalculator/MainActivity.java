@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,6 +21,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.calccapacitance);
         Button button2 = (Button) findViewById(R.id.calcresistance);
+
+
 
     }
 
