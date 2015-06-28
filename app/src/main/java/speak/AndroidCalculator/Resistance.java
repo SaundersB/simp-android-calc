@@ -62,11 +62,11 @@ public class Resistance extends Activity {
 
     private void initalizeTextFields() {
         EditTextFields = new ArrayList<>();
-        amperetext = (EditText) findViewById(R.id.amperetext);
+        amperetext = (EditText) findViewById(R.id.amperefield);
         EditTextFields.add(amperetext);
-        resistancetext = (EditText) findViewById(R.id.resistancetxt);
+        resistancetext = (EditText) findViewById(R.id.resistancefield);
         EditTextFields.add(resistancetext);
-        voltagetext = (EditText) findViewById(R.id.voltagetext);
+        voltagetext = (EditText) findViewById(R.id.voltagefield);
         EditTextFields.add(voltagetext);
     }
 
@@ -77,28 +77,28 @@ public class Resistance extends Activity {
         String num3 = amperetext.getText().toString();
 
         double volt;
-        double charge;
-        double capa;
+        double amp;
+        double resis;
 
         if ((num1 != null && num1.trim().length() > 0) && (num2 != null && num2.trim().length() > 0)) {
                 volt = Double.parseDouble(num1);
-                charge = Double.parseDouble(num2);
-                capa = (charge / volt);
-                voltagetext.setText(String.valueOf(capa));
+                resis = Double.parseDouble(num2);
+                amp = (volt / resis);
+                amperetext.setText(String.valueOf(amp));
         }
 
         else if ((num2 != null && num2.trim().length() > 0) && (num3 != null && num3.trim().length() > 0)) {
-                charge = Double.parseDouble(num2);
-                capa = Double.parseDouble(num3);
-                volt = (charge / capa);
+                resis = Double.parseDouble(num2);
+                amp = Double.parseDouble(num3);
+                volt = (resis * amp);
                 resistancetext.setText(String.valueOf(volt));
             }
 
         else if ((num3 != null && num3.trim().length() > 0) && (num1 != null && num1.trim().length() > 0)) {
-                capa = Double.parseDouble(num3);
+                amp = Double.parseDouble(num3);
                 volt = Double.parseDouble(num1);
-                charge = (capa * volt);
-                amperetext.setText(String.valueOf(charge));
+                resis = (volt / amp);
+                amperetext.setText(String.valueOf(resis));
             }
 
     }

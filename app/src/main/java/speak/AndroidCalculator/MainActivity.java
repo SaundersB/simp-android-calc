@@ -17,12 +17,19 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.calccapacitance);
+        Button button2 = (Button) findViewById(R.id.calcresistance);
 
     }
 
     public void Capacitance(View view)
     {
         Intent intent = new Intent(MainActivity.this, Capacitance.class);
+        startActivity(intent);
+    }
+
+    public void Resistance(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, Resistance.class);
         startActivity(intent);
     }
 
