@@ -1,4 +1,4 @@
-package speak.practice;
+package speak.AndroidCalculator;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
