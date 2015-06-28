@@ -26,19 +26,10 @@ public class Capacitance extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capacitance_main);
-        setButtons();
         initalizeTextFields();
     }
 
-    private void setButtons() {
-        Button enter = (Button) findViewById(R.id.enter);
-        enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-    }
 
 
     private void initalizeTextFields() {
@@ -53,7 +44,7 @@ public class Capacitance extends Activity {
     }
 
 
-    public void onClick(View view) {
+    public void onClickEnter(View view) {
         String num1 = VoltageText.getText().toString();
         String num2 = ElectricChargeText.getText().toString();
         String num3 = CapacitanceText.getText().toString();
@@ -62,33 +53,25 @@ public class Capacitance extends Activity {
         int Charge = Integer.parseInt(num2);
         int Capa = Integer.parseInt(num3);
 
-        if (num1 != null && num1.trim().length() > 0) {
-            if (num2 != null && num2.trim().length() > 0)
-            {
+        if (num1 != null && num1.trim().length() > 0)
+            if (num2 != null && num2.trim().length() > 0) {
                 Capa = (Charge / Volt);
                 CapacitanceText.setText(Capa);
             }
-        }
 
-        if (num2 != null && num2.trim().length() > 0) {
-            if (num3 != null && num3.trim().length() > 0)
-            {
+        if (num2 != null && num2.trim().length() > 0)
+            if (num3 != null && num3.trim().length() > 0) {
                 Volt = (Charge / Capa);
                 VoltageText.setText(Volt);
             }
-        }
 
-        if (num3 != null && num3.trim().length() > 0) {
-            if (num1 != null && num1.trim().length() > 0)
-            {
+        if (num3 != null && num3.trim().length() > 0)
+            if (num1 != null && num1.trim().length() > 0) {
                 Charge = (Capa * Volt);
                 ElectricChargeText.setText(Charge);
             }
-        }
 
-
-
-
+   
 
         /*
         switch(view.getId()){
@@ -102,6 +85,18 @@ public class Capacitance extends Activity {
                 break;
         }
         */
+    }
+
+
+    public void onClickClear(View view) {
+        String num1 = VoltageText.getText().toString();
+        String num2 = ElectricChargeText.getText().toString();
+        String num3 = CapacitanceText.getText().toString();
+        CapacitanceText.setText(" ");
+        ElectricChargeText.setText(" ");
+        CapacitanceText.setText(" ");
+
+
     }
 
 }
