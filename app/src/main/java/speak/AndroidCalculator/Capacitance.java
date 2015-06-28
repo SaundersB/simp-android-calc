@@ -2,6 +2,7 @@ package speak.AndroidCalculator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -42,6 +43,26 @@ public class Capacitance extends Activity {
                 showcapdef();
             }
         });
+        TextView charge = (TextView) findViewById(R.id.electricchargetext);
+        charge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showchargedef();
+            }
+        });
+        TextView volts = (TextView) findViewById(R.id.voltagetext);
+        volts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showvoltdef();
+            }
+        });
+
+
+
+
+
+
 
 
     }
@@ -98,10 +119,42 @@ public class Capacitance extends Activity {
 
     }
 
-
+    // Three functions to have popup definitions for each of the inputs.
     public void showcapdef(){
 
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setTitle("Definition");
+        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setCancelable(true);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
 
+    public void showchargedef(){
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setTitle("Definition");
+        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setCancelable(true);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
+
+
+    public void showvoltdef(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setTitle("Definition");
+        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setCancelable(true);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
+
+
+    public void onClickExit(View view){
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
@@ -132,6 +185,7 @@ public class Capacitance extends Activity {
 
         // show it
         alertDialog.show();
+
     }
 
 

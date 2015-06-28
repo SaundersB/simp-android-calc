@@ -96,4 +96,14 @@
         android:layout_alignEnd="@+id/electricchargefield"
         android:layout_alignStart="@+id/electricchargefield" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/donebutton"
+        android:layout_alignTop="@+id/enter"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickExit" />
+
 </RelativeLayout>
