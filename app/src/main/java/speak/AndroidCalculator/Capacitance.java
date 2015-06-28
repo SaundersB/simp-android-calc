@@ -36,6 +36,7 @@ public class Capacitance extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capacitance_main);
         initalizeTextFields();
+
         TextView capacitance = (TextView) findViewById(R.id.capacitancetxt);
         capacitance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +58,6 @@ public class Capacitance extends Activity {
                 showvoltdef();
             }
         });
-
-
-
-
-
-
 
 
     }
@@ -135,7 +130,7 @@ public class Capacitance extends Activity {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setMessage("Electric charge is the physical property of matter that causes it to experience a force when placed in an electromagnetic field.");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);
@@ -146,7 +141,20 @@ public class Capacitance extends Activity {
     public void showvoltdef(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
         alertDialogBuilder.setTitle("Definition");
-        alertDialogBuilder.setMessage("Capacitance is the ability of a body to store an electrical charge.");
+        alertDialogBuilder.setMessage("Voltage is the electric energy charge difference of electric potential energy transported between two points.");
+        alertDialogBuilder.setCancelable(true);
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
+    }
+
+
+    public void OnClickMoreInfo(View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+        alertDialogBuilder.setTitle("Capacitance");
+        alertDialogBuilder.setMessage("Capacitance is typified by a parallel plate arrangement and is defined in terms of charge storage.\n" +
+                                    "Equation: C=Q/V.\n" +
+                                    "Unit: Coulomb/Volt = Farad.\n");
         alertDialogBuilder.setCancelable(true);
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.setCanceledOnTouchOutside(true);
@@ -159,11 +167,11 @@ public class Capacitance extends Activity {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         // set title
-        alertDialogBuilder.setTitle("Your Title");
+        alertDialogBuilder.setTitle("Are you done?");
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Click yes to exit!")
+                .setMessage("Click yes to go back")
                 .setCancelable(false)
                 .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {

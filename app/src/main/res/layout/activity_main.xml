@@ -14,7 +14,7 @@
         android:text="Calculate Capacitance"
         android:id="@+id/calccapacitance"
         android:onClick="Capacitance"
-        android:layout_below="@+id/CalculatorSelection"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
