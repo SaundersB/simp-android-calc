@@ -47,7 +47,7 @@ public class Capacitance extends Activity {
         EditTextFields.add(VoltageText);
         ElectricChargeText = (EditText) findViewById(R.id.electricchargefield);
         EditTextFields.add(ElectricChargeText);
-        CapacitanceText = (EditText) findViewById(R.id.capacitancefield);
+        CapacitanceText = (EditText) findViewById(R.id.calccapacitance);
         EditTextFields.add(CapacitanceText);
 
     }
@@ -58,11 +58,32 @@ public class Capacitance extends Activity {
         String num2 = ElectricChargeText.getText().toString();
         String num3 = CapacitanceText.getText().toString();
 
-
-
+        int Volt = Integer.parseInt(num1);
+        int Charge = Integer.parseInt(num2);
+        int Capa = Integer.parseInt(num3);
 
         if (num1 != null && num1.trim().length() > 0) {
-            System.out.println("There is nothing here dude");
+            if (num2 != null && num2.trim().length() > 0)
+            {
+                Capa = (Charge / Volt);
+                CapacitanceText.setText(Capa);
+            }
+        }
+
+        if (num2 != null && num2.trim().length() > 0) {
+            if (num3 != null && num3.trim().length() > 0)
+            {
+                Volt = (Charge / Capa);
+                VoltageText.setText(Volt);
+            }
+        }
+
+        if (num3 != null && num3.trim().length() > 0) {
+            if (num1 != null && num1.trim().length() > 0)
+            {
+                Charge = (Capa * Volt);
+                ElectricChargeText.setText(Charge);
+            }
         }
 
 
