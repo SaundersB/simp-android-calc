@@ -3,7 +3,6 @@ package speak.practice;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,7 @@ public class Capacitance extends Activity {
         EditTextFields.add(VoltageText);
         ElectricChargeText = (EditText) findViewById(R.id.electricchargefield);
         EditTextFields.add(ElectricChargeText);
-        CapacitanceText = (EditText) findViewById(R.id.calccapacitance);
+        CapacitanceText = (EditText) findViewById(R.id.capacitancetext);
         EditTextFields.add(CapacitanceText);
 
     }
@@ -71,8 +70,6 @@ public class Capacitance extends Activity {
                 ElectricChargeText.setText(Charge);
             }
 
-   
-
         /*
         switch(view.getId()){
             case R.id.enter:
@@ -89,9 +86,7 @@ public class Capacitance extends Activity {
 
 
     public void onClickClear(View view) {
-        String num1 = VoltageText.getText().toString();
-        String num2 = ElectricChargeText.getText().toString();
-        String num3 = CapacitanceText.getText().toString();
+
         CapacitanceText.setText(" ");
         ElectricChargeText.setText(" ");
         CapacitanceText.setText(" ");

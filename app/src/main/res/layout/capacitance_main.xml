@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Electric Charge"
-        android:id="@+id/electriccharge"
+        android:id="@+id/electricchargetext"
         android:layout_marginTop="39dp"
         android:layout_below="@+id/capacitancetext"
         android:layout_alignParentStart="true"
@@ -68,7 +68,7 @@
         android:ems="10"
         android:id="@+id/electricchargefield"
         android:background="#ffffffff"
-        android:layout_alignTop="@+id/electriccharge"
+        android:layout_alignTop="@+id/electricchargetext"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/capacitancetext" />
 
