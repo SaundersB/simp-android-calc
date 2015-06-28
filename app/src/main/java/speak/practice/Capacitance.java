@@ -28,18 +28,14 @@ public class Capacitance extends Activity {
         initalizeTextFields();
     }
 
-
-
-
     private void initalizeTextFields() {
         EditTextFields = new ArrayList<>();
         VoltageText = (EditText) findViewById(R.id.voltagefield);
         EditTextFields.add(VoltageText);
         ElectricChargeText = (EditText) findViewById(R.id.electricchargefield);
         EditTextFields.add(ElectricChargeText);
-        CapacitanceText = (EditText) findViewById(R.id.capacitancetext);
+        CapacitanceText = (EditText) findViewById(R.id.capacitancefield);
         EditTextFields.add(CapacitanceText);
-
     }
 
 
@@ -48,49 +44,36 @@ public class Capacitance extends Activity {
         String num2 = ElectricChargeText.getText().toString();
         String num3 = CapacitanceText.getText().toString();
 
-        int Volt = Integer.parseInt(num1);
-        int Charge = Integer.parseInt(num2);
-        int Capa = Integer.parseInt(num3);
+        double volt = Double.parseDouble(num1);
+        double charge = Double.parseDouble(num2);
+        double capa = Double.parseDouble(num3);
 
         if (num1 != null && num1.trim().length() > 0)
             if (num2 != null && num2.trim().length() > 0) {
-                Capa = (Charge / Volt);
-                CapacitanceText.setText(Capa);
+                capa = (charge / volt);
+                CapacitanceText.setText(String.valueOf(capa));
             }
 
-        if (num2 != null && num2.trim().length() > 0)
+        else if (num2 != null && num2.trim().length() > 0)
             if (num3 != null && num3.trim().length() > 0) {
-                Volt = (Charge / Capa);
-                VoltageText.setText(Volt);
+                volt = (charge / capa);
+                VoltageText.setText(String.valueOf(volt));
             }
 
-        if (num3 != null && num3.trim().length() > 0)
+        else if (num3 != null && num3.trim().length() > 0)
             if (num1 != null && num1.trim().length() > 0) {
-                Charge = (Capa * Volt);
-                ElectricChargeText.setText(Charge);
+                charge = (capa * volt);
+                ElectricChargeText.setText(String.valueOf(charge));
             }
 
-        /*
-        switch(view.getId()){
-            case R.id.enter:
-                float capaci1 = Integer.parseInt(num2) / Integer.parseInt(num1);
-                float volta1 = Integer.parseInt(num2) / Integer.parseInt(num3);
-                float elecchar1 = Integer.parseInt(num3) * Integer.parseInt(num1);
-                tvresult.setText(String.valueOf(capaci1));
-                break;
-            case R.id.clear:
-                break;
-        }
-        */
     }
 
 
     public void onClickClear(View view) {
 
-        CapacitanceText.setText(" ");
-        ElectricChargeText.setText(" ");
-        CapacitanceText.setText(" ");
-
+        for (EditText editText : EditTextFields) {
+            editText.setText("");
+        }
 
     }
 

@@ -34,9 +34,9 @@
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
-        android:id="@+id/capacitancetext"
+        android:id="@+id/capacitancefield"
         android:background="#ffffffff"
-        android:layout_alignTop="@+id/capacitancetext"
+        android:layout_alignTop="@+id/capacitancetxt"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/enter" />
 
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/capacitance"
-        android:id="@+id/capacitancetext"
+        android:id="@+id/capacitancetxt"
         android:layout_marginTop="87dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -57,7 +57,7 @@
         android:text="Electric Charge"
         android:id="@+id/electricchargetext"
         android:layout_marginTop="39dp"
-        android:layout_below="@+id/capacitancetext"
+        android:layout_below="@+id/capacitancetxt"
         android:layout_alignParentStart="true"
         android:textSize="20sp" />
 
@@ -70,7 +70,7 @@
         android:background="#ffffffff"
         android:layout_alignTop="@+id/electricchargetext"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/capacitancetext" />
+        android:layout_toEndOf="@+id/capacitancetxt" />
 
     <TextView
         android:layout_width="wrap_content"
