@@ -1,6 +1,8 @@
 package speak.AndroidCalculator;
 
+import android.app.Fragment;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,11 +18,8 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
-
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
 
     // Layout
     @Override
