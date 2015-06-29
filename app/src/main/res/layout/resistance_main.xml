@@ -1,11 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
     android:background="#000000"
     android:id="@+id/resistancestring">
+
+
+
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -36,9 +43,9 @@
         android:ems="10"
         android:id="@+id/resistancefield"
         android:background="#ffffffff"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/CalcResistHead"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/amperefield"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="38dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,9 +64,8 @@
         android:id="@+id/amperetext"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/resistancetxt"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
+        android:layout_alignTop="@+id/amperefield"
+        android:layout_alignParentStart="true" />
         //android:layout_below="@+id/capacitancefield"
         //android:layout_alignParentStart="true"
     />
@@ -71,8 +77,9 @@
         android:ems="10"
         android:id="@+id/amperefield"
         android:background="#ffffffff"
-        android:layout_alignBottom="@+id/amperetext"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/voltagetext"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="38dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,9 +88,8 @@
         android:id="@+id/voltagetext"
         android:textSize="20sp"
     android:textColor="#FFFFFF"
-        android:layout_below="@+id/amperetext"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
+        android:layout_alignBottom="@+id/voltagefield"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -92,8 +98,9 @@
         android:ems="10"
         android:id="@+id/voltagefield"
         android:background="#ffffffff"
-        android:layout_alignTop="@+id/voltagetext"
-        android:layout_alignStart="@+id/amperefield" />
+        android:layout_above="@+id/enter"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="30dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -115,8 +122,9 @@
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/resistancefield"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
