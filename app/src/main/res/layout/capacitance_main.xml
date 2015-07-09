@@ -11,12 +11,23 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/enter"
-        android:onClick="onClickEnter"
-        android:layout_above="@+id/clear"
+        android:text="More Information"
+        android:id="@+id/moreinfo"
+        android:onClick="OnClickMoreInfo"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/donebutton"
+        android:onClick="onClickExit"
+        android:layout_above="@+id/moreinfo"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/moreinfo" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -29,88 +40,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/capacitancefield"
-        android:background="#ffffffff"
-        android:layout_above="@+id/voltagetext"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/amperetext"
-        android:layout_marginStart="34dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/capacitance"
-        android:id="@+id/resistancetxt"
-        android:textSize="20sp"
-        android:textColor="#fffff7ff"
-        android:layout_below="@+id/amperetext"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Electric Charge"
-        android:id="@+id/amperetext"
-        android:textSize="20sp"
-        android:textColor="#FFFFFF"
-        android:layout_alignTop="@+id/electricchargefield"
-        android:layout_alignParentStart="true" />
-        //android:layout_below="@+id/capacitancefield"
-        //android:layout_alignParentStart="true"
-    />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/electricchargefield"
-        android:background="#ffffffff"
-        android:layout_below="@+id/CalcResistHead"
-        android:layout_alignEnd="@+id/enter"
-        android:layout_marginTop="28dp"
-        android:layout_alignStart="@+id/capacitancefield" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltage"
-        android:id="@+id/voltagetext"
-        android:textSize="20sp"
-    android:textColor="#FFFFFF"
-        android:layout_below="@+id/resistancetxt"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/voltagefield"
-        android:background="#ffffffff"
-        android:layout_alignBottom="@+id/voltagetext"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/capacitancefield" />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Done"
-        android:id="@+id/donebutton"
-        android:onClick="onClickExit"
-        android:layout_above="@+id/moreinfo"
+        android:text="Enter"
+        android:id="@+id/enter"
+        android:onClick="onClickEnter"
+        android:layout_above="@+id/clear"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/moreinfo" />
-        //android:layout_below="@+id/clear"
-        //android:layout_alignStart="@+id/moreinfo" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -123,15 +62,88 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="More Information"
-        android:id="@+id/moreinfo"
-        android:onClick="OnClickMoreInfo"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/charge_container"
+        android:orientation="horizontal"
+        android:layout_below="@+id/CalcResistHead"
+        android:layout_margin="28dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Electric Charge"
+            android:layout_weight="1"
+            android:id="@+id/amperetext"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/electricchargefield"
+            android:background="#ffffffff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cap_container"
+        android:orientation="horizontal"
+        android:layout_below="@+id/charge_container"
+        android:layout_margin="28dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/capacitance"
+            android:id="@+id/resistancetxt"
+            android:textSize="20sp"
+            android:textColor="#fffff7ff"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/capacitancefield"
+            android:background="#ffffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/volt_container"
+        android:orientation="horizontal"
+        android:layout_below="@+id/cap_container"
+        android:layout_margin="28dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Voltage"
+            android:layout_weight="1"
+            android:id="@+id/voltagetext"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/voltagefield"
+            android:background="#ffffffff"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
