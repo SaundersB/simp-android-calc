@@ -59,11 +59,11 @@ public class Capacitance extends Activity {
                 showvoltdef();
             }
         });
-/*
+
         AdView adView = (AdView) this.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
-*/
+
 
     }
 

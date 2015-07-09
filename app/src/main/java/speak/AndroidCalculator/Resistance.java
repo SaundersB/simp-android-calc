@@ -60,7 +60,9 @@ public class Resistance extends Activity {
             }
         });
 
-
+        AdView adView = (AdView) this.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
     }
 
     private void initalizeTextFields() {

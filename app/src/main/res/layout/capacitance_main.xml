@@ -1,11 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:background="#000000"
     android:id="@+id/capacitancestring">
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7023910132362107/8847765272"
+        android:layout_above="@+id/calccapacitance"
+        android:layout_marginBottom="5dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -59,7 +72,7 @@
         android:textColor="#FFFFFF"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/adView"
         android:layout_centerHorizontal="true" />
 
     <LinearLayout
